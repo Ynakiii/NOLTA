@@ -1,0 +1,3 @@
+document.querySelectorAll('[data-page-link]').forEach((link) => { if (link.getAttribute('href') === location.pathname.split('/').pop() || (link.getAttribute('href') === 'index.html' && !location.pathname.split('/').pop())) link.classList.add('active'); });
+document.querySelectorAll('[data-confirm]').forEach((button) => button.addEventListener('click', (event) => { if (!window.confirm(button.dataset.confirm)) event.preventDefault(); }));
+window.showMessage = (message) => { const toast = document.querySelector('#toast'); if (!toast) return; toast.textContent = message; toast.classList.add('show'); window.setTimeout(() => toast.classList.remove('show'), 3000); };
